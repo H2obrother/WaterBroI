@@ -1,0 +1,5 @@
+This is a Warrior AI for RM battlefield.
+It is not a strategy bot which  make decision based on my code.
+Instead it will learn wheter shoot or run from experience.
+Beside AI player,I also provide a simulator which should make 
+me away from insane  behavior when the robot out of control. 

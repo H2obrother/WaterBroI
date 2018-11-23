@@ -1,0 +1,22 @@
+#TODO
+*battlefield representation
+	*A kind of chess board representation which means square and each grid
+	 is the same size.
+	*The area and the resolution could vary.
+
+
+*Game Unit
+    *harmless  
+	*base     X1
+	*engineer X1
+
+    *warrior(able to )
+	*infantry X3 or 2
+	*Hero  X 1 (Not much different with infantry in 2019,classify them out just for respect.LOL)
+	*drone X 1 (The most IMBA unit 2019);
+
+
+*Game Rules
+	very complicated,only the rules effect how sentry behave will be considered.
+		
+	
