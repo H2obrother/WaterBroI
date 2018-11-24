@@ -16,7 +16,10 @@
 	*drone X 1 (The most IMBA unit 2019);
 
 
-*Game Rules
-	very complicated,only the rules effect how sentry behave will be considered.
-		
+*State
+	*Time of the game
+	*Position of each game unit
+	*state of each game unit(HP,ammo,buff,etc)
+	*anything in the rules.
+	
 	
