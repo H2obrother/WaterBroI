@@ -1,7 +1,6 @@
- /* battlefield.hh
-  *
-  *Created on: Nov 25, 2018
-  *      Author: h2obrother */
+
+/**/
+
 
 
 #ifdef BATTLEFIELD_HH
@@ -38,9 +37,9 @@ public:
   double distanceTo(Point& p2){return sqrt(pow(x_coord-p2.getX(), 2) + pow(y_coord - p2.getY(), 2));};
 };
 
-class terrain{};
 
-//start with chess board 
+
+//start with chess board
 class battlefield{
 
 	uint width , height;	//normally the battlefield will be squre means width == height
@@ -54,8 +53,8 @@ public:
 
 	// input: a  map {terrain(key):point(value)} assign terrain to each location
 	// specified by the map value as well as a 2d Point.
-	// since the sizes shapes of each terrain are unknown,just put a point at 
-	// that location 
+	// since the sizes shapes of each terrain are unknown,just put a point at
+	// that location
 	battlefield(uint _width, uint _height, uint _mapSacle,map<string,Point>);
 
 	battlefield();
@@ -70,9 +69,9 @@ battlefield::battlefield(uint _width, uint _height ,uint _mapSacle){
 	mapSacle=_mapSacle;
 	uint	len = width * height;
 	board = new uint[len];
-	
+
 	// initialize the battle field
-	for (int i = 0; i < len; i++) 
+	for (int i = 0; i < len; i++)
 		board[i] = 0;
 }
 
@@ -81,9 +80,4 @@ battlefield::~battlefield(){
 };
 
 #endif
-
-
-
-
-
 
