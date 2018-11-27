@@ -4,7 +4,7 @@
   *      Author: h2obrother */
 
 
-#ifdef BATTLEFIELD_HH
+#ifndef BATTLEFIELD_HH
 #define BATTLEFIELD_HH
 
 #include <map>
@@ -38,7 +38,7 @@ public:
   double distanceTo(Point& p2){return sqrt(pow(x_coord-p2.getX(), 2) + pow(y_coord - p2.getY(), 2));};
 };
 
-class terrain{};
+class terrain{};//wait for cg learning
 
 //start with chess board 
 class battlefield{
@@ -68,6 +68,7 @@ battlefield::battlefield(uint _width, uint _height ,uint _mapSacle){
 	width 	= _width;
 	height 	= _height;
 	mapSacle=_mapSacle;
+
 	uint	len = width * height;
 	board = new uint[len];
 	
