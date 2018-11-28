@@ -10,6 +10,8 @@
 #include <map>
 #include <string>
 #include <cmath>
+#include "gameunit.hh"
+#include <stdexcept>
 using namespace std;
 // A 2-dimensional point class!
 // Coordinates are double-precision floating point.
@@ -44,8 +46,8 @@ class terrain{};//wait for cg learning
 class battlefield{
 
 	uint width , height;	//normally the battlefield will be squre means width == height
-	uint mapSacle;		//map distance  * mapScale == realWorld Distance ,it probably
-				        //is not a interger,just pick a interger.
+	uint mapSacle;		    //map distance  * mapScale == realWorld Distance unit in cm ,actual value
+				            //is not a integer,just pick a integer.
 	uint *board;
 
 public:
@@ -57,14 +59,22 @@ public:
 	// since the sizes shapes of each terrain are unknown,just put a point at 
 	// that location 
 	battlefield(uint _width, uint _height, uint _mapSacle,map<string,Point>);
-
 	battlefield();
 	~battlefield();
+
+	const uint index(uint x,uint y){return width*y+x;};
+	//output: 0 empty
+	//        1 unrechable
+	//        other number corresponding to game unit type
+
+	uint getState(uint x,uint y);
+	void setState(uint x,uint y,unitType u);
 }
+
 
 battlefield::battlefield(uint _width, uint _height ,uint _mapSacle){
 	if(_width < 0 || _mapSacle <0)
-		throw runtime_error.what("battleField size can't be negative");
+		throw runtime_error("battleField size can't be negative");
 	width 	= _width;
 	height 	= _height;
 	mapSacle=_mapSacle;
@@ -81,6 +91,17 @@ battlefield::~battlefield(){
 	delete[] board;
 };
 
+uint battlefield::getState(uint x,uint y){
+    if(x > (width - 1)  || (y > height - 1))
+    	throw out_of_range("Don't access outside the battlefield.\n");
+	return board[index(x,y)];
+}
+
+void battlefield::setState(uint x,uint y,unitType u){
+	if(x > (width - 1)  || (y > height - 1))
+	    	throw out_of_range("Access outside the battlefield.\n");
+	board[index(x,y)] = u;
+}
 #endif
 
 
